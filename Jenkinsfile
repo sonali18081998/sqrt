@@ -25,10 +25,10 @@ pipeline {
     stage("build") { 
         steps { //it will execute if the when condition is true
           echo 'building the application...'
-          sh "g++ src/main.cpp -o build/main
+          sh "g++ src/main.cpp -o build/main"
           steps { 
           // echo 'building the application...'
-          // sh "g++ src/main.cpp -o build/main" 
+           //sh "g++ src/main.cpp -o build/main" 
 
           script {
             gv.buildApp()  //using groovy function
