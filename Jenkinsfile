@@ -27,10 +27,7 @@ pipeline {
           echo 'building the application...'
           sh "g++ src/main.cpp -o build/main"
           steps { 
-          // echo 'building the application...'
-           //sh "g++ src/main.cpp -o build/main" 
-
-          script {
+            script {
             gv.buildApp()  //using groovy function
           }
         }
