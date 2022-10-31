@@ -36,3 +36,22 @@ pipeline {
         }
     }
     stage("test") {
+       when { //conditions
+            expression {
+                params.executeTests
+            }
+        }
+        steps { //it will execute if the when condition is true
+          echo 'testing the application...'
+          sh "./build/main"
+        }
+    }
+    stage("deploy") {
+        steps {
+          echo 'deploying the application...'
+          echo "deploying version ${params.VERSION}"
+        }
+    }
+  }
+}
+      
